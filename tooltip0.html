@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  text-align: center;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .text {
+  width: 120px;
+  background: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 1s;   
+}
+.tooltip:hover .text {
+  opacity: 1;
+}
+.tooltip .text::after {
+  content: "";
+  position: absolute;
+  border: 5px solid;
+}
+/* ========= */
+.tooltip .top {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+}
+.tooltip .top::after {
+  top: 100%;
+  left: 50%;
+  border-color: black transparent transparent transparent;
+}
+/* ========= */
+.tooltip .bottom {
+  top: 150%;
+  left: 50%;
+  margin-left: -5px;
+}
+.tooltip .bottom::after {
+  bottom: 100%;
+  left: 50%;
+  border-color: transparent transparent black transparent;
+}
+
+/* =========  */
+.tooltip .right {
+  top: -10%;
+  left: 170%;
+}
+.tooltip .right::after {
+  top: 40%;
+  right: 100%;
+  border-color: transparent black transparent transparent;
+}
+
+/* ========= */
+.tooltip .left {
+  top: -10%;
+  right: 60%;
+}
+.tooltip .left::after {
+  top: 40%;
+  left: 100%;
+  border-color: transparent transparent transparent black;
+}
+</style>
+
+<body>
+
+<h2>Fade In Tooltip on Hover</h2>
+<p>When you move the mouse over the text below, the tooltip text will fade in and take 1 second to go from completely invisible to visible.</p>
+
+<div class="tooltip">Hover over me
+  <span class="text top">Tooltip text</span>
+  <span class="text bottom">Tooltip text</span>
+  
+  <span class="text right">Tooltip text</span>
+  <span class="text left">Tooltip text</span>
+</div>
+
+</body>
+</html>
